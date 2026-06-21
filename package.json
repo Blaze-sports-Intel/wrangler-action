@@ -26,7 +26,10 @@
 		"build": "npx ncc build ./src/index.ts && mv ./dist/index.js ./dist/index.mjs",
 		"test": "vitest",
 		"format": "prettier --write .",
-		"check": "prettier --check ."
+		"check": "prettier --check .",
+		"prepare": "bash scripts/install-git-hooks.sh",
+		"hooks:install": "bash scripts/install-git-hooks.sh",
+		"secrets:check": "python3 scripts/secret_guard.py --staged"
 	},
 	"dependencies": {
 		"@actions/core": "^1.11.1",
